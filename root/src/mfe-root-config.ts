@@ -9,11 +9,17 @@ registerApplication({
   activeWhen: ["/"],
 });
 
-// registerApplication({
-//   name: "@mfe/navbar",
-//   app: () => System.import("@mfe/navbar"),
-//   activeWhen: ["/"]
-// });
+registerApplication({
+  name: "@mfe/auth",
+  app: () => System.import<LifeCycles>("@mfe/auth"),
+  activeWhen: ["/"],
+});
+
+registerApplication({
+  name: "@mfe/dashbaord",
+  app: () => System.import<LifeCycles>("@mfe/dashboard"),
+  activeWhen: ["/"],
+});
 
 start({
   urlRerouteOnly: true,
